@@ -25,18 +25,6 @@ export default defineConfig({
       less: { javascriptEnabled: true },
     },
   },
-  build: {
-    chunkSizeWarningLimit: 1024,
-    reportCompressedSize: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          common: [ 'vue', 'pinia', 'vue-router', 'axios' ],
-          interface: [ 'primevue' ],
-        },
-      },
-    },
-  },
   server: {
     proxy: {
       '/api': { target: 'http://localhost:8008', changeOrigin: true },
